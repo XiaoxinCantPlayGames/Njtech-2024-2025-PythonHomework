@@ -16,9 +16,7 @@ a = int(input())
 n = int(input())
 x, y, count = 1, a, 2
 k = 0
-_ = []
-_.append(x)
-_.append(y)
+_ = [x,y]
 while count <= n:
     x = x + y
     y = x + y
