@@ -10,4 +10,9 @@
 num = input()
 print(int(num,2))
 
-# 正常解法后续更新~
+# 正常解法
+num = input()
+result = 0
+for i in range(len(num)):
+    result += int(num[-(i+1)]) * (2**i)
+print(result)
