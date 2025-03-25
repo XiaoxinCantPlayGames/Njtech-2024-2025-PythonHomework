@@ -14,15 +14,16 @@
 
 a = int(input())
 n = int(input())
-x, y, count = 1, a, 2
+x = 1
+count = 2
 k = 0
-_ = [x,y]
-while count <= n:
-    x = x + y
-    y = x + y
+_ = [x,a]
+while count < n:
+    x = x + a
+    a = x + a
     _.append(x)
-    _.append(y)
-    count += 1
+    _.append(a)
+    count += 2
 for i in _[0:n]:
     k += 1
     print(i,end=" ")
