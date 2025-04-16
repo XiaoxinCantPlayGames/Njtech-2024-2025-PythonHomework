@@ -32,9 +32,9 @@ if staff in lst_staff:
 else:
     print("该员工不存在")
 
-# get()方法
+# get()方法：理论上可以通过，但是学习通就是不给通过
 staff = input()
 if staff in lst_staff:
-    reward.get(staff,5000) # 若staff在字典中，则输出对应的值；反之，则输出5000
+    print(reward.get(staff,5000)) # 若staff在字典中，则输出对应的值；反之，则输出5000
 else:
     print("该员工不存在")
