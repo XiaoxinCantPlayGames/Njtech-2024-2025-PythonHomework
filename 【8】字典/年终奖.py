@@ -21,11 +21,19 @@
 lst_staff = ["李梅","张富","付妍","赵诺","刘江"]
 reward = {"张富":10000,"赵诺":15000}
 
+# 分支结构
 staff = input()
 if staff in lst_staff:
     if staff in reward:
         print(reward[staff])
     else:
         print(5000)  # 不在奖品的字典里面的员工直接输出5000
+else:
+    print("该员工不存在")
+
+# get()方法
+staff = input()
+if staff in lst_staff:
+    reward.get(staff,5000)
 else:
     print("该员工不存在")
