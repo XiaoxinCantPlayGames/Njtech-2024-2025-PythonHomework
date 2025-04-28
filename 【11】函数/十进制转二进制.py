@@ -6,9 +6,24 @@
 # 1011
 
 
+# bin()内置函数
 def f(num):
     n = str(bin(num)) # 内置的十进制传换成二进制函数
     return n[2:]
+
+# 题意算法
+def f(num):
+    flag = True
+    number = []
+    while flag:
+        if num // 2 != 0:
+            number.append(str(num%2))
+            num = num // 2
+        else:
+            number.append(str(num%2))
+            flag = False
+    return "".join(number[::-1])
+
 
 print(eval(input()))
 
