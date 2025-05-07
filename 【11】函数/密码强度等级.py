@@ -13,7 +13,7 @@
 # 集合
 def f(password):
     result = 0
-    if set(password).isdisjoint("1234567890") == False:  # 集合：判断密码中存不存在后面参数中的内容，下同
+    if set(password).isdisjoint("1234567890") == False:  # 集合的内容isdisjoint()方法：判断密码中存不存在后面参数中的内容，下同
         result += 1
     if set(password).isdisjoint(set("qwertyuiopasdfghjklzxcvbnm")) == False:
         result += 1
