@@ -38,6 +38,21 @@ def f(password):
     result = level1+level2+level3+level4
     return result
 
+# 字符串方法
+def f(password):
+    level1, level2, level3, level4 = 0, 0, 0, 0 # 题目上的各要求初始化为0
+    if len(password) >= 8: # 判断该密码长度不少于8位
+        level4 = 1 
+    for i in password:
+        if i.isdecimal(): # 判断该字符是不是数字
+            level1 = 1
+        elif i.islower(): # 判断该字符是不是小写字母
+            level2 = 1
+        elif i.isupper(): # 判断该字符是不是大写字母
+            level3 = 1
+    result = level1+level2+level3+level4
+    return result
+
 # 输入输出
 level = eval(input())
 print(f"密码强度{level}级")
