@@ -16,6 +16,18 @@
 # 4.5
 
 
+
+# 函数
+def zws(ls):
+    ls.sort()
+    if len(ls) % 2 == 0: # 判断这个列表的元素个数是奇数还是偶数
+        return (ls[len(ls)//2]+ls[len(ls)//2-1])/2 # 地板除是结果向下取整，ls[len(ls)//2]是中间后面的那个元素，ls[len(ls)//2-1]才是中间前面的那个元素，不信你自己试试 §(*￣▽￣*)§
+    else:
+        return ls[len(ls)//2]
+ls = eval(input())
+print(zws(ls))
+
+
 # 条件分支
 ls = eval(input())
 ls.sort()
@@ -23,13 +35,4 @@ if len(ls) % 2 == 0: # 判断这个列表的元素个数是奇数还是偶数
     print((ls[len(ls)//2]+ls[len(ls)//2-1])/2) # 地板除是结果向下取整，ls[len(ls)//2]是中间后面的那个元素，ls[len(ls)//2-1]才是中间前面的那个元素，不信你自己试试 §(*￣▽￣*)§
 else:
     print(ls[len(ls)//2])
-
-# 函数
-ls = eval(input())
-def zws(ls):
-    ls.sort()
-    if len(ls) % 2 == 0: # 判断这个列表的元素个数是奇数还是偶数
-        return (ls[len(ls)//2]+ls[len(ls)//2-1])/2 # 地板除是结果向下取整，ls[len(ls)//2]是中间后面的那个元素，ls[len(ls)//2-1]才是中间前面的那个元素，不信你自己试试 §(*￣▽￣*)§
-    else:
-        return ls[len(ls)//2]
 
