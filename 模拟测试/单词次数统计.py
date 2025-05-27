@@ -10,9 +10,7 @@
 
 s = input()
 s = s.lower()
-s = s.replace(","," ")
-s = s.replace("."," ")
-s = s.replace(";"," ")
+s = s.replace(",.;"," ")
 s = s.split()
 count = {}
 for i in s:
