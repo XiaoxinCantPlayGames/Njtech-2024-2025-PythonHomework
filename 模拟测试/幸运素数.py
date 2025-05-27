@@ -55,6 +55,6 @@ for i in range(x,y+1):
                 flag = 1 # 不满足则标记为1
                 break
         if flag: # 标记为1，条件成立，break结束循环，这次循环的i不是幸运素数
-            break
+            continue
         else:
             print(i)
