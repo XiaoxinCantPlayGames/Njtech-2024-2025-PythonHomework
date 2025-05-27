@@ -13,27 +13,48 @@
 # 29
 
 
+# 判断素数函数
 def isSushu(n):
     if n in (0,1):
         return 0
     for j in range(2,n):
         if n % j == 0:
-            return 0
+            return 0 # 0等价于False
     else:
-        return 1
+        return 1 # 1等价于True
     
+# 输入
 x = int(input())
 y = int(input())
+
+# 判断算法1（使用了try-except语句）
 for i in range(x,y+1):
     try:
         if isSushu(i):
-            num = i//10
+            num = i//10 # 地板除：目的除掉最后一位数
             while num >= 1:
                 if isSushu(num):
                     num = num // 10
                     continue
                 else:
-                    raise
+                    raise # 生成一个错误，然后执行except的代码，使代码跳出两层循环
             print(i)
     except:
         continue
+
+# 判断算法2（flag标记）
+for i in range(x,y+1):
+    flag = 0 # 用于标记是不是满足之后的条件
+    if isSushu(i):
+        num = i//10
+        while num >= 1:
+            if isSushu(num):
+                num = num // 10 # 地板除：目的除掉最后一位数
+                continue
+            else:
+                flag = 1 # 不满足则标记为1
+                break
+        if flag: # 标记为1，条件成立，break结束循环，这次循环的i不是幸运素数
+            break
+        else:
+            print(i)
