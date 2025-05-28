@@ -29,32 +29,30 @@ y = int(input())
 
 # 判断算法1（使用了try-except语句）
 for i in range(x,y+1):
+    num  = i
     try:
-        if isSushu(i):
-            num = i//10 # 地板除：目的除掉最后一位数
-            while num >= 1:
-                if isSushu(num):
-                    num = num // 10
-                    continue
-                else:
-                    raise # 生成一个错误，然后执行except的代码，使代码跳出两层循环
-            print(i)
+        while num >= 1:
+            if isSushu(num):
+                num = num // 10 # 地板除：目的除掉最后一位数
+                continue
+            else:
+                raise # 生成一个错误，然后执行except的代码，使代码跳出两层循环
+        print(i)
     except:
         continue
 
 # 判断算法2（flag标记）
 for i in range(x,y+1):
     flag = 0 # 用于标记是不是满足之后的条件
-    if isSushu(i):
-        num = i//10
-        while num >= 1:
-            if isSushu(num):
-                num = num // 10 # 地板除：目的除掉最后一位数
-                continue
-            else:
-                flag = 1 # 不满足则标记为1
-                break
-        if flag: # 标记为1，条件成立，continue结束本次循环，这次循环的i不是幸运素数
+    num  = i
+    while num >= 1:
+        if isSushu(num):
+            num = num // 10 # 地板除：目的除掉最后一位数
             continue
         else:
-            print(i)
+            flag = 1 # 不满足则标记为1
+            break
+    if flag: # 标记为1，条件成立，continue结束本次循环，这次循环的i不是幸运素数
+        continue
+    else:
+        print(i)
